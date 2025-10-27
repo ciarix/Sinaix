@@ -36,4 +36,16 @@ details {
   border: 1px solid #eee;
   border-radius: 8px;
   margin-top: 8px;
+}/* === Responsive form height for smaller screens === */
+@media (max-width: 768px) {
+  .form-container iframe {
+    height: 900px; /* shorter form for tablets */
+  }
 }
+
+@media (max-width: 480px) {
+  .form-container iframe {
+    height: 750px; /* even shorter for phones */
+  }
+}
+
