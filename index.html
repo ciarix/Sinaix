@@ -6,63 +6,121 @@
   <title>Sinaix Pet Sitting — Safe, Loving Care</title>
 
   <style>
-    :root{
-      --bg:#0b0f15; --card:#121a22; --text:#eaeaea; --muted:#9aa0a6;
-      --accent:#00bfa5; --accent-ink:#002321; --card-border:#1a2e3b;
+    :root {
+      --bg: #0b0f15;
+      --card: #121a22;
+      --text: #eaeaea;
+      --muted: #9aa0a6;
+      --accent: #00bfa5;
+      --accent-ink: #002321;
+      --card-border: #1a2e3b;
+      --telegram: #27a6e5;
+      --whatsapp: #25d366;
     }
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
+    * { box-sizing: border-box; }
 
-    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);
-      background:color-mix(in srgb, var(--bg) 80%, transparent);border-bottom:1px solid #222531}
-    .wrap{max-width:1000px;margin:0 auto;padding:16px}
-
-    h1{font-size:1.7rem;margin:6px 0}
-    nav{display:flex;gap:16px;flex-wrap:wrap;margin:8px 0}
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--text)}
-
-    main section{padding:28px 0;border-bottom:1px solid #1a1e2b}
-    h2{font-size:1.35rem;margin:0 0 8px}
-    p{margin:8px 0 10px}
-
-    .card{background:var(--card);border:1px solid var(--card-border);
-      border-radius:16px;padding:18px}
-
-    .form-container{display:grid;place-items:center}
-    .form-container iframe{
-      width:100%; max-width:900px; height:1200px; border:0; border-radius:12px;
-      box-shadow:0 0 24px rgba(0,0,0,.18); background:#fff;
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.6;
     }
-    .center{text-align:center}
 
-    .contact-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-block; padding:10px 16px; border-radius:999px;
-      font-weight:600; color:var(--accent-ink); border:0; background:var(--accent);
-    }
-    .btn:hover{filter:brightness(1.05)}
-    .btn.outline{
-      background:transparent; color:var(--accent); border:1px solid var(--accent);
-    }
-    .btn.telegram{background:#27a6e5;color:#001b28}
-    .btn.whatsapp{background:#25D366;color:#001b28}
+    a { color: var(--accent); text-decoration: none; transition: 0.25s ease; }
+    a:hover { text-decoration: underline; color: #33ffc3; }
 
-    footer{padding:28px 0;color:var(--muted)}
-    footer .wrap{display:flex;justify-content:center}
-
-    @media (max-width: 768px){
-      .form-container iframe{height:1000px}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid #222531;
     }
-    @media (max-width: 480px){
-      .form-container iframe{height:850px}
+
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 16px; }
+    h1 { font-size: 1.7rem; margin: 6px 0; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; margin: 8px 0; }
+    nav a { color: var(--muted); font-weight: 500; }
+    nav a:hover { color: var(--text); }
+
+    main section { padding: 32px 0; border-bottom: 1px solid #1a1e2b; }
+    h2 { font-size: 1.35rem; margin: 0 0 8px; }
+    p { margin: 8px 0 10px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    }
+
+    .form-container { display: grid; place-items: center; margin-top: 12px; }
+    .form-container iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 1200px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 24px rgba(0,0,0,.18);
+      background: #000;
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    .center { text-align: center; }
+
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      color: var(--accent-ink);
+      border: 0;
+      background: var(--accent);
+      transition: 0.25s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    .btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .btn.outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn.telegram {
+      background: var(--telegram);
+      color: #001b28;
+    }
+    .btn.whatsapp {
+      background: var(--whatsapp);
+      color: #001b28;
+    }
+
+    footer { padding: 28px 0; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: center; font-size: 0.95rem; }
+
+    @media (max-width: 768px) {
+      .form-container iframe { height: 1000px; }
+    }
+
+    @media (max-width: 480px) {
+      .form-container iframe { height: 850px; }
+      .btn { min-width: 140px; font-size: 0.9rem; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap">
@@ -101,7 +159,7 @@
         <h2>Book a Meet-and-Greet 🐶</h2>
         <p>Please fill out the Google Form below to schedule your visit!</p>
 
-        <div class="form-container" style="margin-top:12px">
+        <div class="form-container">
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSdgHJtXesp82M_RVckERXszqfZytDgAqbO2RprEomle7ryPcA/viewform?embedded=true"
             allowfullscreen
@@ -110,12 +168,11 @@
           >Loading…</iframe>
         </div>
 
-        <p class="center" style="margin-top:10px">
+        <p class="center" style="margin-top:14px">
           Having trouble?
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdgHJtXesp82M_RVckERXszqfZytDgAqbO2RprEomle7ryPcA/viewform"
-            target="_blank" rel="noopener"
-          >Open the form in a new tab</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgHJtXesp82M_RVckERXszqfZytDgAqbO2RprEomle7ryPcA/viewform" target="_blank" rel="noopener">
+            Open the form in a new tab
+          </a>
         </p>
 
         <div class="contact-row">
@@ -135,11 +192,11 @@
           >WhatsApp</a>
         </div>
 
-        <p class="center" style="margin-top:6px;color:#9aa0a6;font-size:.95rem;">
+        <p class="center" style="margin-top:10px;color:#9aa0a6;font-size:.95rem;">
           Tip: If Telegram/WhatsApp doesn’t open, try again from your phone or use Email.
         </p>
 
-        <p class="center" style="margin-top:4px;">
+        <p class="center" style="margin-top:6px;">
           <a href="tg://resolve?domain=sianixpet&start=from_site">Open Telegram app</a>
         </p>
       </div>
