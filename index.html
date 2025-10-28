@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sinaix Pet Sitting – Safe, Loving Care</title>
+  <title>Sinaix Pet Sitting • Safe, Loving Care</title>
 
   <!-- Minimal built-in styles so it looks good even without external CSS -->
   <style>
@@ -14,29 +14,59 @@
       --bg: #0f1115;
       --card: #151822;
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.5; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
     header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px); background: color-mix(in srgb, var(--bg) 80%, transparent); border-bottom: 1px solid #222531; }
     .wrap { max-width: 1000px; margin: 0 auto; padding: 16px; }
+
     h1 { font-size: 1.6rem; margin: 0 0 6px; }
     nav { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
     nav a { color: var(--muted); }
     nav a:hover { color: var(--text); }
+
     main section { padding: 32px 0; border-bottom: 1px solid #1a1e2b; }
     h2 { font-size: 1.35rem; margin: 0 0 8px; }
     p { margin: 8px 0 0; }
-    ul { margin: 8px 0 0 18px; }
+    ul { margin: 8px 0 18px; }
+
     .card { background: var(--card); border: 1px solid #1a1e2b; border-radius: 16px; padding: 18px; }
     .form-container { display: grid; place-items: center; }
-    .form-container iframe { width: 100%; max-width: 900px; height: 1200px; border: 0; border-radius: 12px; box-shadow: 0 0 24px rgba(0,0,0,.18); background: #fff; }
+
+    /* Form frame — responsive and pretty */
+    .form-container iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 1200px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 24px rgba(0,0,0,.18);
+      background: #fff;
+    }
     .center { text-align: center; }
+
+    /* Buttons */
     .btn { display: inline-block; padding: 10px 16px; border-radius: 999px; background: var(--accent); color: #002321; font-weight: 600; border: 0; }
     .btn:hover { filter: brightness(1.05); }
+    .btn.outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .btn.whatsapp { background: #25D366; color: #002321; }
+    .btn.telegram { background: #27a6e5; color: #001b28; }
+
+    /* Contact row */
+    .contact-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .contact-row .btn { min-width: 160px; text-align: center; }
+
     footer { padding: 28px 0; color: var(--muted); }
-    @media (max-width: 600px) {
-      .form-container iframe { height: 1400px; }
+
+    /* Smaller screens: shorten form */
+    @media (max-width: 768px) {
+      .form-container iframe { height: 1000px; }
+    }
+    @media (max-width: 480px) {
+      .form-container iframe { height: 850px; }
     }
   </style>
 </head>
@@ -79,49 +109,37 @@
         <p>Bookings are handled through our Google Form below. Please fill it out to schedule your visit!</p>
 
         <div class="form-container" style="margin-top:12px;">
-          <iframe
-            title="Sinaix Booking Form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdgHJtXesp82M_RVckERXszqfZytDgAqb02RprEomIe7ryPcA/viewform?embedded=true"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-
-          <p class="center" style="margin-top:10px;">
-            Having trouble?
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgHJtXesp82M_RVckERXszqfZytDgAqb02RprEomIe7ryPcA/viewform" target="_blank" rel="noopener">Open the form in a new tab</a>
-          <!-- Contact buttons -->
-<div class="contact-row" style="margin-top:16px">
-  <!-- Telegram -->
-  <a class="btn"
-     href="https://t.me/SinaixDogBot?start=from_site"
-     target="_blank" rel="noopener">
-    Chat on Telegram
-  </a>
-
-  <!-- Email -->
-  <a id="emailLink" class="btn outline"
-     href="mailto:hello@sinaix.dog?subject=Sinaix%20Booking%20Inquiry&body=Hi%20Sinaix%2C%20I%27d%20like%20to%20book%20a%20meet-and-greet.%0AName%3A%20%0APhone%3A%20%0APet%20details%3A%20">
-    Email Us
-  </a>
-
-  <!-- WhatsApp -->
-  <a class="btn whatsapp"
-     href="https://wa.me/15551234567?text=Hi%20Sinaix%2C%20I%27d%20like%20to%20book%20a%20meet-and-greet.%20Name%3A%20%5Byour%20name%5D%20%7C%20Dog%3A%20%5Bbreed%2Fage%5D"
-     target="_blank" rel="noopener">
-    WhatsApp
-  </a>
-</div>
-
-<p class="center" style="margin-top:6px; color:#9aa0a6; font-size:.95rem;">
-  Tip: If Telegram/WhatsApp doesn’t open, try again from your phone or use Email.
-</p>
-
-<p class="center" style="margin-top:4px;">
-  <a href="tg://resolve?domain=SinaixDogBot&start=from_site">Open Telegram app</a>
-
-          </p>
+          <!-- Your new Google Form embed (exactly as provided) -->
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgHJtXesp82M_RVckERXszqfZytDgAqbO2RprEomle7ryPcA/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
+
+        <!-- Contact buttons -->
+        <div class="contact-row">
+          <!-- Telegram -->
+          <a class="btn telegram" href="https://t.me/SinaixDogBot?start=from_site" target="_blank" rel="noopener">Chat on Telegram</a>
+
+          <!-- Email -->
+          <a id="emailLink" class="btn outline"
+             href="mailto:hello@sinaix.dog?subject=Sinaix%20Booking%20Inquiry&body=Hi%20Sinaix%2C%20I%27d%20like%20to%20book%20a%20meet-and-greet.%0AName:%0APhone:%0ADog:%20(details)%0APreferred%20date/time:%0A">
+             Email Us
+          </a>
+
+          <!-- WhatsApp (replace number with your real one) -->
+          <a class="btn whatsapp"
+             href="https://wa.me/15551234567?text=Hi%20Sinaix%2C%20I%27d%20like%20to%20book%20a%20meet-and-greet.%20Name:%20%5Byour%20name%5D%20%7C%20Dog:%20%5Bbreed%2Fage%5D"
+             target="_blank" rel="noopener">
+             WhatsApp
+          </a>
+        </div>
+
+        <p class="center" style="margin-top:8px; color:#9aa0a6; font-size:.95rem;">
+          Tip: If Telegram/WhatsApp doesn’t open, try again from your phone or use Email.
+        </p>
+
+        <!-- Optional: “open Telegram app” deep link (desktop helper) -->
+        <p class="center" style="margin-top:6px;">
+          <a href="tg://resolve?domain=SinaixDogBot&start=from_site">Open Telegram app</a>
+        </p>
       </div>
     </section>
 
@@ -133,7 +151,7 @@
           <p>Yes — we love young dogs and handle training routines carefully.</p>
         </details>
         <details>
-          <summary>Do you provide pick-up?</summary>
+          <summary>Do you provide pick–up?</summary>
           <p>Yes, within 10 miles of our base area.</p>
         </details>
       </div>
